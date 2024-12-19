@@ -1,5 +1,7 @@
 module "mysql_sg" { // for mysql for sg
-    source = "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
+   // source = "./../terraform-aws-securitygroup"
+   //source =  "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
+    source =  "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "mysql"
@@ -9,7 +11,8 @@ module "mysql_sg" { // for mysql for sg
 }
 
 module "bastion_sg" { // for bastion for sg--->employes can connect and check
-    source = "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
+    source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
+   //source = "./../terraform-aws-securitygroup"
     project_name = var.project_name
     environment = var.environment
     sg_name = "bastion"
@@ -19,7 +22,8 @@ module "bastion_sg" { // for bastion for sg--->employes can connect and check
 }
 
 module "node_sg" { // for eks nodes for sg
-    source = "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
+    source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
+    //source = "../../terraform-aws-securitygroup"
     project_name = var.project_name
     environment = var.environment
     sg_name = "node"
@@ -29,7 +33,8 @@ module "node_sg" { // for eks nodes for sg
 }
 
 module "eks_control_plane_sg" {// for master(eks_control_plane) for sg
-    source = "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
+   source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
+    //source = "./../terraform-aws-securitygroup"
     project_name = var.project_name
     environment = var.environment
     sg_name = "eks-control-plane"
@@ -39,7 +44,8 @@ module "eks_control_plane_sg" {// for master(eks_control_plane) for sg
 }
 
 module "ingress_alb_sg" { // ingress_app_loadbalencer for sg
-    source = "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
+   //source = "./../terraform-aws-securitygroup"
+   source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "ingress-alb"

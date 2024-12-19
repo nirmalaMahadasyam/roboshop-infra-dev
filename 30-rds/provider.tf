@@ -7,10 +7,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "nirmala-s3bucket  nirmala-lockingtb"
+    bucket = "nirmala-s3bucket"
     key    = "roboshop-rds-dev"
     region = "us-east-1"
-    dynamodb_table = "81s-locking-dev"
+    dynamodb_table = "nirmala-lockingtb"
   }
 }
 
