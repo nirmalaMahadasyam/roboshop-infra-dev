@@ -84,6 +84,7 @@ resource "aws_lb_target_group" "roboshop" {
     timeout = 4
   }
 }
+# which is required access from public(only frontend) this should only use as below
 
 resource "aws_lb_listener_rule" "frontend" {
   listener_arn = aws_lb_listener.https.arn

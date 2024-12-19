@@ -16,3 +16,4 @@ module "bastion" {
     }
   )
 }
+// ec2 instance code

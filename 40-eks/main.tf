@@ -75,3 +75,4 @@ module "eks" {
 
   tags = var.common_tags
 }
+# blue-green deployment with spot instances, k8 upgradation.
