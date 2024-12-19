@@ -3,7 +3,7 @@ module "mysql_sg" { // for mysql for sg
    //source =  "git::https://github.com/daws-81s/terraform-aws-security-group.git?ref=main"
     source =  "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
     project_name = var.project_name
-    environment_name = var.environment_name
+    environment = var.environment
     sg_name = "mysql"
     vpc_id = local.vpc_id
     common_tags = var.common_tags
@@ -14,7 +14,7 @@ module "bastion_sg" { // for bastion for sg--->employes can connect and check
     source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
    //source = "./../terraform-aws-securitygroup"
     project_name = var.project_name
-    environment_name = var.environment_name
+    environment = var.environment
     sg_name = "bastion"
     vpc_id = local.vpc_id
     common_tags = var.common_tags
@@ -25,7 +25,7 @@ module "node_sg" { // for eks nodes for sg
     source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
     //source = "../../terraform-aws-securitygroup"
     project_name = var.project_name
-    environment_name = var.environment_name
+    environment = var.environment
     sg_name = "node"
     vpc_id = local.vpc_id
     common_tags = var.common_tags
@@ -36,7 +36,7 @@ module "eks_control_plane_sg" {// for master(eks_control_plane) for sg
    source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
     //source = "./../terraform-aws-securitygroup"
     project_name = var.project_name
-    environment_name = var.environment_name
+    environment = var.environment
     sg_name = "eks-control-plane"
     vpc_id = local.vpc_id
     common_tags = var.common_tags
@@ -47,7 +47,7 @@ module "ingress_alb_sg" { // ingress_app_loadbalencer for sg
    //source = "./../terraform-aws-securitygroup"
    source = "git::https://github.com/nirmalaMahadasyam/terraform-aws-security-group.git?ref=main"
     project_name = var.project_name
-    environment_name = var.environment_name_name
+    environment = var.environment_name
     sg_name = "ingress-alb"
     vpc_id = local.vpc_id
     common_tags = var.common_tags
