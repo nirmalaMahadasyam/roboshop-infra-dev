@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "mongodb" {
-  name                 = "${var.project_name}/${var.environment}/mongodb"
+  name                 = "${var.project_name}/${var.environment_name}/mongodb"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {
@@ -8,7 +8,7 @@ resource "aws_ecr_repository" "mongodb" {
 }
 
 resource "aws_ecr_repository" "frontend" {
-  name                 = "${var.project_name}/${var.environment}/frontend"
+  name                 = "${var.project_name}/${var.environment_name}/frontend"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {
@@ -17,7 +17,7 @@ resource "aws_ecr_repository" "frontend" {
 }
 
 resource "aws_ecr_repository" "catalogue" {
-  name                 = "${var.project_name}/${var.environment}/catalogue"
+  name                 = "${var.project_name}/${var.environment_name}/catalogue"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {
@@ -26,7 +26,7 @@ resource "aws_ecr_repository" "catalogue" {
 }
 
 resource "aws_ecr_repository" "cart" {
-  name                 = "${var.project_name}/${var.environment}/cart"
+  name                 = "${var.project_name}/${var.environment_name}/cart"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {
@@ -35,7 +35,7 @@ resource "aws_ecr_repository" "cart" {
 }
 
 resource "aws_ecr_repository" "user" {
-  name                 = "${var.project_name}/${var.environment}/user"
+  name                 = "${var.project_name}/${var.environment_name}/user"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {
@@ -44,7 +44,7 @@ resource "aws_ecr_repository" "user" {
 }
 
 resource "aws_ecr_repository" "shipping" {
-  name                 = "${var.project_name}/${var.environment}/shipping"
+  name                 = "${var.project_name}/${var.environment_name}/shipping"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {
@@ -53,7 +53,7 @@ resource "aws_ecr_repository" "shipping" {
 }
 
 resource "aws_ecr_repository" "payment" {
-  name                 = "${var.project_name}/${var.environment}/payment"
+  name                 = "${var.project_name}/${var.environment_name}/payment"
   image_tag_mutability = "MUTABLE"
   force_delete = true
   image_scanning_configuration {

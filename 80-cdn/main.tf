@@ -1,8 +1,8 @@
 
 resource "aws_cloudfront_distribution" "roboshop" {
   origin {
-    domain_name              = "${var.project_name}-${var.environment}.${var.zone_name}"
-    origin_id                = "${var.project_name}-${var.environment}.${var.zone_name}"
+    domain_name              = "${var.project_name}-${var.environment_name}.${var.zone_name}"
+    origin_id                = "${var.project_name}-${var.environment_name}.${var.zone_name}"
 
     custom_origin_config {
         http_port = 80
@@ -20,7 +20,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "${var.project_name}-${var.environment}.${var.zone_name}"
+    target_origin_id = "${var.project_name}-${var.environment_name}.${var.zone_name}"
 
     viewer_protocol_policy = "redirect-to-https"
     min_ttl                = 0
@@ -34,7 +34,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
     path_pattern     = "/images/*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id = "${var.project_name}-${var.environment}.${var.zone_name}"
+    target_origin_id = "${var.project_name}-${var.environment_name}.${var.zone_name}"
 
     min_ttl                = 0
     default_ttl            = 86400
@@ -49,7 +49,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
     path_pattern     = "/static/*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id = "${var.project_name}-${var.environment}.${var.zone_name}"
+    target_origin_id = "${var.project_name}-${var.environment_name}.${var.zone_name}"
 
     min_ttl                = 0
     default_ttl            = 86400
